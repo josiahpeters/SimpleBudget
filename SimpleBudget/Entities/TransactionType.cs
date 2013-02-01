@@ -5,8 +5,9 @@ using System.Text;
 
 namespace SimpleBudget
 {
-    public interface IIdentifiable
+    public enum TransactionType
     {
-        Guid Id { get; set; }
+        Outgoing,
+        Incoming
     }
 }

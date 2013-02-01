@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SimpleBudget
+namespace SimpleBudget.Domain
 {
-    public interface IIdentifiable
+    class Category
     {
-        Guid Id { get; set; }
     }
 }

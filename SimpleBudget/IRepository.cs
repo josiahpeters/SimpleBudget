@@ -9,7 +9,7 @@ namespace SimpleBudget
     {
         void Create(T entity);
         void Update(T entity);
-        void Delete(int Id);
-        T Get(int Id);
+        void Delete(Guid Id);
+        T Get(Guid Id);
     }
 }

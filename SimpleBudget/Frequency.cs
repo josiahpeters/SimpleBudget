@@ -5,8 +5,7 @@ using System.Text;
 
 namespace SimpleBudget
 {
-    public interface IIdentifiable
+    class Frequency
     {
-        Guid Id { get; set; }
     }
 }

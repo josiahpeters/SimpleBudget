@@ -5,8 +5,7 @@ using System.Text;
 
 namespace SimpleBudget
 {
-    public interface IIdentifiable
+    class Budget
     {
-        Guid Id { get; set; }
     }
 }
