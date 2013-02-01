@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBudget.Data", "Simple
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBudget", "SimpleBudget\SimpleBudget.csproj", "{097E00BB-E262-4EB3-8560-2D4B13122CEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBudget.Tests", "SimpleBudget.Tests\SimpleBudget.Tests.csproj", "{A479E287-60FF-4C22-B1E7-5A1D0A27998A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBudget.DataMock", "SimpleBudget.DataMock\SimpleBudget.DataMock.csproj", "{64773BF5-DD1E-4667-9388-46EB02640B7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{097E00BB-E262-4EB3-8560-2D4B13122CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{097E00BB-E262-4EB3-8560-2D4B13122CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{097E00BB-E262-4EB3-8560-2D4B13122CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A479E287-60FF-4C22-B1E7-5A1D0A27998A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A479E287-60FF-4C22-B1E7-5A1D0A27998A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A479E287-60FF-4C22-B1E7-5A1D0A27998A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A479E287-60FF-4C22-B1E7-5A1D0A27998A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64773BF5-DD1E-4667-9388-46EB02640B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64773BF5-DD1E-4667-9388-46EB02640B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64773BF5-DD1E-4667-9388-46EB02640B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64773BF5-DD1E-4667-9388-46EB02640B7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
