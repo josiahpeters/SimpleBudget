@@ -7,6 +7,6 @@ namespace SimpleBudget.Interfaces
 {
     public interface IUserRepository : IRepository<User>
     {
-
+        bool AuthenticateUser(string username, string password);
     }
 }
