@@ -1,9 +1,26 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleBudget\Entities\User.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleBudget.Data\Repositories\IUserRepository.cs">
     <Files>
-      <File FileName="SimpleBudget\Entities\User.cs" Line="10" Column="37" />
+      <File FileName="SimpleBudget\Interfaces\Repositories\IUserRepository.cs" Line="10" Column="65" />
+      <File FileName="SimpleBudget.Data\Repositories\IUserRepository.cs" Line="23" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="SimpleBudget" expanded="True">
+            <Node name="Interfaces" expanded="True" />
+          </Node>
+          <Node name="SimpleBudget.Data" selected="True" />
+          <Node name="SimpleBudget.DataMock" expanded="True">
+            <Node name="Repositories" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
