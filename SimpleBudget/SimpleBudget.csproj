@@ -30,6 +30,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.3.9.35\lib\net35\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.35\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Common.3.9.35\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.35\lib\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.35\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\packages\ServiceStack.Redis.3.9.35\lib\net35\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\packages\ServiceStack.3.9.35\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.35\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="Entities\Bill.cs" />
     <Compile Include="Entities\Budget.cs" />
     <Compile Include="Entities\Category.cs" />
@@ -46,6 +71,7 @@
     <Compile Include="Entities\TransactionType.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Frequency.cs" />
+    <Compile Include="Entities\Relationships.cs" />
     <Compile Include="Interfaces\IIdentifiable.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITransactionRepository.cs" />
@@ -54,6 +80,9 @@
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBudgetRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

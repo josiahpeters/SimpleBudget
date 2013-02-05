@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.0.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.3.0.0\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security">
       <HintPath>..\packages\Npgsql.2.0.12.1\lib\net40\Mono.Security.dll</HintPath>
     </Reference>
@@ -64,14 +70,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrmLite\DbSetup.cs" />
+    <Compile Include="OrmLite\LowercaseNamingStrategy.cs" />
+    <Compile Include="OrmLite\OrmLiteRepository.cs" />
+    <Compile Include="PostgresDbProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\TransactionRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\BudgetRepository.cs" />
+    <Compile Include="Repositories\BillRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Folder Include="Relationships\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

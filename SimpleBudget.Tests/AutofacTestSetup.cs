@@ -21,10 +21,13 @@ namespace SimpleBudget.Tests
         {
             builder = new ContainerBuilder();
 
-            if (module != null)
-                builder.RegisterModule(module);
+            builder.RegisterModule(new AutofacDataModule());
+            // builder.RegisterModule(new AutofacMockModule());
 
-            builder.RegisterModule(new AutofacMockModule());
+            //if (module != null)
+            //    builder.RegisterModule(module);
+            //else
+            //    builder.RegisterModule(new AutofacMockModule());
 
             container = builder.Build();
         }

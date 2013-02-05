@@ -7,6 +7,7 @@ namespace SimpleBudget.Interfaces
 {
     public interface IBudgetRepository : IRepository<Budget>
     {
-
+        List<Category> GetCategoriesByBudgetId(Guid Id);
+        List<Transaction> GetTransactionsByBudgetId(Guid Id);
     }
 }
