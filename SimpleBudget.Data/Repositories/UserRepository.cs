@@ -31,7 +31,7 @@ namespace SimpleBudget.Data
 
         public User Get(Guid Id)
         {
-            return db.GetById<User>(Id);
+            return db.GetByIdOrDefault<User>(Id);
         }
 
         #endregion

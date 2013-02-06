@@ -4,10 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SimpleBudget.Tests.Core.Interfaces
 {
     [TestClass]
-    public class IRepositoryTests
+    public class IRepositoryTests : TestBase
     {
-        AutofacTestSetup testSetup;
-
         IRepository<User> userRepository;
         IRepository<Budget> budgetRepository;
         IRepository<Category> categoryRepository;
@@ -20,23 +18,15 @@ namespace SimpleBudget.Tests.Core.Interfaces
         Transaction transaction;
         Bill bill;
 
-        [TestInitialize]
-        public void Init()
+        protected override void Initialize()
         {
-            testSetup = new AutofacTestSetup();
-
             userRepository = testSetup.Resolve<IRepository<User>>();
             budgetRepository = testSetup.Resolve<IRepository<Budget>>();
             categoryRepository = testSetup.Resolve<IRepository<Category>>();
             transactionRepository = testSetup.Resolve<IRepository<Transaction>>();
             billRepository = testSetup.Resolve<IRepository<Bill>>();
 
-            initializeTestData();
-        }
-
-        private void initializeTestData()
-        {
-            user = new User { Id = Guid.NewGuid() };
+            user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User" };
             budget = new Budget { Id = Guid.NewGuid(), StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(12), Frequency = Frequency.Monthly };
             category = new Category { Id = Guid.NewGuid(), Name = "Bills", Frequency = budget.Frequency };
             transaction = new Transaction { Id = Guid.NewGuid(), Description = "Test Transaction", Amount = 15.00m, Date = DateTime.Now, TransactionType = TransactionType.Outgoing };

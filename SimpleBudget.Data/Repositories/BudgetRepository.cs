@@ -30,7 +30,7 @@ namespace SimpleBudget.Data
 
 		public Budget Get (Guid Id)
 		{
-            return db.GetById<Budget>(Id);
+            return db.GetByIdOrDefault<Budget>(Id);
 		}
 
 		#endregion

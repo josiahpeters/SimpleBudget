@@ -31,7 +31,7 @@ namespace SimpleBudget.Data
 
 		public Category Get (Guid Id)
 		{
-            return db.GetById<Category>(Id);
+            return db.GetByIdOrDefault<Category>(Id);
 		}
 
 		#endregion

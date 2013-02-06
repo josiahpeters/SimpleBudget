@@ -7,28 +7,19 @@ using SimpleBudget.Data.OrmLite;
 namespace SimpleBudget.Tests.Core.Interfaces
 {
     [TestClass]
-    public class IUserRepositoryTests
+    public class IUserRepositoryTests : TestBase
     {
-        AutofacTestSetup testSetup;
 
         IRepository<User> userRepository;
 
         User user;
         Budget budget;
 
-        [TestInitialize]
-        public void Init()
+        protected override void Initialize()
         {
-            testSetup = new AutofacTestSetup();
-
             userRepository = testSetup.Resolve<IUserRepository>();
 
-            initializeTestData();
-        }
-
-        private void initializeTestData()
-        {
-            user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User"  };
+            user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User" };
             budget = new Budget { Id = Guid.NewGuid(), StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(12), Frequency = Frequency.Monthly };
         }
 

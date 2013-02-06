@@ -106,7 +106,7 @@
     <Compile Include="Core\Interfaces\IUserRepositoryTests.cs" />
     <Compile Include="Core\Interfaces\IRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestSetup.cs" />
+    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleBudget.DataMock\SimpleBudget.DataMock.csproj">
