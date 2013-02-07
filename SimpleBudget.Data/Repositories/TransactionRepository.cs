@@ -9,7 +9,7 @@ namespace SimpleBudget.Data
 {
     public class TransactionRepository : OrmLiteRepository, ITransactionRepository
 	{
-        public TransactionRepository(IDbConnectionFactory connectionFactory) : base(connectionFactory) { }
+        public TransactionRepository(IDbConnection connection) : base(connection) { }
 
 		#region IRepository implementation
 

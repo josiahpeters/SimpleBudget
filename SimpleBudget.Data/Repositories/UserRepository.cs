@@ -9,8 +9,8 @@ using System.Collections.Generic;
 namespace SimpleBudget.Data
 {
     public class UserRepository : OrmLiteRepository, IUserRepository
-    {        
-        public UserRepository(IDbConnectionFactory connectionFactory) : base(connectionFactory) { }
+    {
+        public UserRepository(IDbConnection connection) : base(connection) { }
 
         #region IRepository implementation
 

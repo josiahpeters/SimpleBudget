@@ -74,6 +74,7 @@
     <Compile Include="Entities\Relationships.cs" />
     <Compile Include="Interfaces\IIdentifiable.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryUnitOfWork.cs" />
     <Compile Include="Interfaces\Repositories\ITransactionRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBillRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoryRepository.cs" />

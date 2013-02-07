@@ -10,7 +10,7 @@ namespace SimpleBudget.Data
 {
     public class CategoryRepository : OrmLiteRepository, ICategoryRepository
 	{
-        public CategoryRepository(IDbConnectionFactory connectionFactory) : base(connectionFactory) { }
+        public CategoryRepository(IDbConnection connection) : base(connection) { }
 
 		#region IRepository implementation
 

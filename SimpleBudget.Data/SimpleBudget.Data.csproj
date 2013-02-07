@@ -80,6 +80,7 @@
     <Compile Include="Repositories\BudgetRepository.cs" />
     <Compile Include="Repositories\BillRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="RepositoryUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

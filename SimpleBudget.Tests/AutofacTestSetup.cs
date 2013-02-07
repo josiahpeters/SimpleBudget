@@ -17,6 +17,13 @@ namespace SimpleBudget.Tests
             return container.Resolve<T>();
         }
 
+        public T ResolveLifetime<T>()
+        {
+            return container.Resolve<T>();
+        }
+
+        public IContainer Container { get { return container; } }
+
         public AutofacTestSetup(Module module = null)
         {
             builder = new ContainerBuilder();

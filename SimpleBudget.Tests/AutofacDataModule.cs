@@ -7,6 +7,7 @@ using SimpleBudget.DataMock.Repositories;
 using SimpleBudget.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -27,6 +28,7 @@ namespace SimpleBudget.Tests
             }
 
             builder.Register(c => connectionFactory).As<IDbConnectionFactory>();
+            builder.Register(c => connectionFactory.Open()).As<IDbConnection>().InstancePerLifetimeScope();
 
 
             builder.RegisterType<UserRepository>().As<IUserRepository>().As<IRepository<User>>().InstancePerLifetimeScope();
@@ -39,6 +41,9 @@ namespace SimpleBudget.Tests
             //builder.RegisterType<CategoryRepository>().As<IRepository<Category>>().InstancePerLifetimeScope();
             //builder.RegisterType<TransactionRepository>().As<IRepository<Transaction>>().InstancePerLifetimeScope();
             builder.RegisterType<BillRepository>().As<IRepository<Bill>>().InstancePerLifetimeScope();
+
+            builder.RegisterType<RepositoryUnitOfWork>().As<IRepositoryUnitOfWork>().InstancePerLifetimeScope();
+
 
             
 

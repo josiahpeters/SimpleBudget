@@ -3,6 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceStack.OrmLite;
 using SimpleBudget.Interfaces;
 using SimpleBudget.Data.OrmLite;
+using SimpleBudget.Data;
+using Autofac;
+using ServiceStack.OrmLite.PostgreSQL;
 
 namespace SimpleBudget.Tests.Core.Interfaces
 {
@@ -14,6 +17,7 @@ namespace SimpleBudget.Tests.Core.Interfaces
         IBudgetRepository budgetRepository;
         ICategoryRepository categoryRepository;
         ITransactionRepository transactionRepository;
+        //IRepositoryUnitOfWork context;
 
         User user;
         Budget budget;
@@ -26,6 +30,7 @@ namespace SimpleBudget.Tests.Core.Interfaces
             budgetRepository = testSetup.Resolve<IBudgetRepository>();
             categoryRepository = testSetup.Resolve<ICategoryRepository>();
             transactionRepository = testSetup.Resolve<ITransactionRepository>();
+            
 
             user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User" };
             budget = new Budget { Id = Guid.NewGuid(), StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(12), Frequency = Frequency.Monthly };
@@ -37,16 +42,50 @@ namespace SimpleBudget.Tests.Core.Interfaces
         public void AddCategoryToBudget_GetCategoriesByBudgetId()
         //public void AddBudgetToUser(Guid budgetId, Guid userId)
         {
-            budgetRepository.Create(budget);
-            categoryRepository.Create(category);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
+                context.Categories.Create(category);
 
-            budgetRepository.AddCategoryToBudget(category.Id, budget.Id);
+                context.Budgets.AddCategoryToBudget(category.Id, budget.Id);
 
-            var categories = budgetRepository.GetCategoriesByBudgetId(budget.Id);
+                var categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
 
-            Assert.IsNotNull(categories);
-            Assert.AreEqual(1, categories.Count);
+                Assert.IsNotNull(categories);
+                Assert.AreEqual(1, categories.Count);
+            }
+            //using (var lifetime = testSetup.Container.BeginLifetimeScope())
+            //{
+            //    context = lifetime.Resolve<IRepositoryUnitOfWork>();
+
+            //    context.Budgets.Create(budget);
+            //    context.Categories.Create(category);
+
+            //    context.Budgets.AddCategoryToBudget(category.Id, budget.Id);
+
+            //    var categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
+
+            //    Assert.IsNotNull(categories);
+            //    Assert.AreEqual(1, categories.Count);
+            //}
         }
+        //[TestMethod]
+        //public void AddCategoryToBudget_GetCategoriesByBudgetId()
+        ////public void AddBudgetToUser(Guid budgetId, Guid userId)
+        //{
+        //    using (IRepositoryUnitOfWork context = testSetup.Resolve<IRepositoryUnitOfWork>())
+        //    {
+        //        context.Budgets.Create(budget);
+        //        context.Categories.Create(category);
+
+        //        context.Budgets.AddCategoryToBudget(category.Id, budget.Id);
+
+        //        var categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
+
+        //        Assert.IsNotNull(categories);
+        //        Assert.AreEqual(1, categories.Count);
+        //    }
+        //}
 
         [TestMethod]
         public void RemoveCategoryFromBudget()
@@ -62,7 +101,7 @@ namespace SimpleBudget.Tests.Core.Interfaces
             Assert.IsNotNull(categories);
             Assert.AreEqual(1, categories.Count);
 
-            budgetRepository.RemoveCategoryFromBudget(budget.Id, category.Id);
+            budgetRepository.RemoveCategoryFromBudget(category.Id, budget.Id);
 
             categories = budgetRepository.GetCategoriesByBudgetId(budget.Id);
 

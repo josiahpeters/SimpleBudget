@@ -7,16 +7,33 @@ using System.Text;
 
 namespace SimpleBudget.Data
 {
-    public class OrmLiteRepository
+    public class OrmLiteRepository : IDisposable
     {
-        IDbConnection connection;
-        protected IDbConnection db { get { return connection ?? (connection = connectionFactory.Open()); } }
+        IDbConnection connection = null;
+        protected IDbConnection db;
+        //{
+        //    get
+        //    {
+        //        if(connection == null)
+        //            connection = connectionFactory.Open();
+        //        return connection;
+        //    }
+        //}
 
         IDbConnectionFactory connectionFactory;
 
-        public OrmLiteRepository(IDbConnectionFactory connectionFactory)
+        public OrmLiteRepository(IDbConnection connection)
         {
-            this.connectionFactory = connectionFactory;
+            this.connection = connection;
+            this.db = connection;
+        }
+
+        public void Dispose()
+        {
+            if (db != null && db.State != ConnectionState.Closed)
+            {
+                db.Close();
+            }
         }
     }
 }
