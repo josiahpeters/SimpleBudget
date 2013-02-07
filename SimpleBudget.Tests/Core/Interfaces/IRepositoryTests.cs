@@ -1,17 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SimpleBudget.Interfaces;
 
 namespace SimpleBudget.Tests.Core.Interfaces
 {
     [TestClass]
     public class IRepositoryTests : TestBase
     {
-        IRepository<User> userRepository;
-        IRepository<Budget> budgetRepository;
-        IRepository<Category> categoryRepository;
-        IRepository<Transaction> transactionRepository;
-        IRepository<Bill> billRepository;
-
         User user;
         Budget budget;
         Category category;
@@ -20,11 +15,6 @@ namespace SimpleBudget.Tests.Core.Interfaces
 
         protected override void Initialize()
         {
-            userRepository = testSetup.Resolve<IRepository<User>>();
-            budgetRepository = testSetup.Resolve<IRepository<Budget>>();
-            categoryRepository = testSetup.Resolve<IRepository<Category>>();
-            transactionRepository = testSetup.Resolve<IRepository<Transaction>>();
-            billRepository = testSetup.Resolve<IRepository<Bill>>();
 
             user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User" };
             budget = new Budget { Id = Guid.NewGuid(), StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(12), Frequency = Frequency.Monthly };
@@ -37,170 +27,216 @@ namespace SimpleBudget.Tests.Core.Interfaces
         [TestMethod]
         public void CreateAndGetUser()
         {
-            userRepository.Create(user);
-            var newUser = userRepository.Get(user.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
 
-            Assert.AreEqual(user.Id, newUser.Id);
+                context.Users.Create(user);
+                var newUser = context.Users.Get(user.Id);
+
+                Assert.AreEqual(user.Id, newUser.Id);
+            }
         }
         [TestMethod]
         public void UpdateUser()
         {
-            userRepository.Create(user);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Users.Create(user);
 
-            var changedUser = new User { Id = user.Id };
+                var changedUser = new User { Id = user.Id };
 
-            userRepository.Update(changedUser);
-            var updatedUser = userRepository.Get(user.Id);
+                context.Users.Update(changedUser);
+                var updatedUser = context.Users.Get(user.Id);
 
-            Assert.AreEqual(changedUser.Id, updatedUser.Id);
+                Assert.AreEqual(changedUser.Id, updatedUser.Id);
+            }
         }
         [TestMethod]
         public void DeleteUser()
         {
-            userRepository.Create(user);
-            var newUser = userRepository.Get(user.Id);
-            Assert.AreEqual(user.Id, newUser.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Users.Create(user);
+                var newUser = context.Users.Get(user.Id);
+                Assert.AreEqual(user.Id, newUser.Id);
 
-            userRepository.Delete(user.Id);
-            var deletedUser = userRepository.Get(user.Id);
+                context.Users.Delete(user.Id);
+                var deletedUser = context.Users.Get(user.Id);
 
-            Assert.IsNull(deletedUser);
+                Assert.IsNull(deletedUser);
+            }
         }
 
         // Budget
         [TestMethod]
         public void CreateAndGetBudget()
         {
-            budgetRepository.Create(budget);
-            var newBudget = budgetRepository.Get(budget.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
+                var newBudget = context.Budgets.Get(budget.Id);
 
-            Assert.AreEqual(budget.Id, newBudget.Id);
+                Assert.AreEqual(budget.Id, newBudget.Id);
+            }
         }
         [TestMethod]
         public void UpdateBudget()
         {
-            budgetRepository.Create(budget);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
 
-            var changedBudget = new Budget { Id = budget.Id };
+                var changedBudget = new Budget { Id = budget.Id };
 
-            budgetRepository.Update(changedBudget);
-            var updatedBudget = budgetRepository.Get(budget.Id);
+                context.Budgets.Update(changedBudget);
+                var updatedBudget = context.Budgets.Get(budget.Id);
 
-            Assert.AreEqual(changedBudget.Id, updatedBudget.Id);
+                Assert.AreEqual(changedBudget.Id, updatedBudget.Id);
+            }
         }
         [TestMethod]
         public void DeleteBudget()
         {
-            budgetRepository.Create(budget);
-            var newBudget = budgetRepository.Get(budget.Id);
-            Assert.AreEqual(budget.Id, newBudget.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
+                var newBudget = context.Budgets.Get(budget.Id);
+                Assert.AreEqual(budget.Id, newBudget.Id);
 
-            budgetRepository.Delete(budget.Id);
-            var deletedBudget = budgetRepository.Get(budget.Id);
+                context.Budgets.Delete(budget.Id);
+                var deletedBudget = context.Budgets.Get(budget.Id);
 
-            Assert.IsNull(deletedBudget);
+                Assert.IsNull(deletedBudget);
+            }
         }
 
         // Category
         [TestMethod]
         public void CreateAndGetCategory()
         {
-            categoryRepository.Create(category);
-            var newCategory = categoryRepository.Get(category.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Categories.Create(category);
+                var newCategory = context.Categories.Get(category.Id);
 
-            Assert.AreEqual(category.Id, newCategory.Id);
+                Assert.AreEqual(category.Id, newCategory.Id);
+            }
         }
         [TestMethod]
         public void UpdateCategory()
         {
-            categoryRepository.Create(category);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Categories.Create(category);
 
-            var changedCategory = new Category { Id = category.Id };
+                var changedCategory = new Category { Id = category.Id };
 
-            categoryRepository.Update(changedCategory);
-            var updatedCategory = categoryRepository.Get(category.Id);
+                context.Categories.Update(changedCategory);
+                var updatedCategory = context.Categories.Get(category.Id);
 
-            Assert.AreEqual(changedCategory.Id, updatedCategory.Id);
+                Assert.AreEqual(changedCategory.Id, updatedCategory.Id);
+            }
         }
         [TestMethod]
         public void DeleteCategory()
         {
-            categoryRepository.Create(category);
-            var newCategory = categoryRepository.Get(category.Id);
-            Assert.AreEqual(category.Id, newCategory.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Categories.Create(category);
+                var newCategory = context.Categories.Get(category.Id);
+                Assert.AreEqual(category.Id, newCategory.Id);
 
-            categoryRepository.Delete(category.Id);
-            var deletedCategory = categoryRepository.Get(category.Id);
+                context.Categories.Delete(category.Id);
+                var deletedCategory = context.Categories.Get(category.Id);
 
-            Assert.IsNull(deletedCategory);
-        }       
+                Assert.IsNull(deletedCategory);
+            }
+        }
 
         // Transaction
         [TestMethod]
         public void CreateAndGetTransaction()
         {
-            transactionRepository.Create(transaction);
-            var newTransaction = transactionRepository.Get(transaction.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Transactions.Create(transaction);
+                var newTransaction = context.Transactions.Get(transaction.Id);
 
-            Assert.AreEqual(transaction.Id, newTransaction.Id);
+                Assert.AreEqual(transaction.Id, newTransaction.Id);
+            }
         }
         [TestMethod]
         public void UpdateTransaction()
         {
-            transactionRepository.Create(transaction);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Transactions.Create(transaction);
 
-            var changedTransaction = new Transaction { Id = transaction.Id };
+                var changedTransaction = new Transaction { Id = transaction.Id };
 
-            transactionRepository.Update(changedTransaction);
-            var updatedTransaction = transactionRepository.Get(transaction.Id);
+                context.Transactions.Update(changedTransaction);
+                var updatedTransaction = context.Transactions.Get(transaction.Id);
 
-            Assert.AreEqual(changedTransaction.Id, updatedTransaction.Id);
+                Assert.AreEqual(changedTransaction.Id, updatedTransaction.Id);
+            }
         }
         [TestMethod]
         public void DeleteTransaction()
         {
-            transactionRepository.Create(transaction);
-            var newTransaction = transactionRepository.Get(transaction.Id);
-            Assert.AreEqual(transaction.Id, newTransaction.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Transactions.Create(transaction);
+                var newTransaction = context.Transactions.Get(transaction.Id);
+                Assert.AreEqual(transaction.Id, newTransaction.Id);
 
-            transactionRepository.Delete(transaction.Id);
-            var deletedTransaction = transactionRepository.Get(transaction.Id);
+                context.Transactions.Delete(transaction.Id);
+                var deletedTransaction = context.Transactions.Get(transaction.Id);
 
-            Assert.IsNull(deletedTransaction);
+                Assert.IsNull(deletedTransaction);
+            }
         }
 
         // Bill
         [TestMethod]
         public void CreateAndGetBill()
         {
-            billRepository.Create(bill);
-            var newBill = billRepository.Get(bill.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Bills.Create(bill);
+                var newBill = context.Bills.Get(bill.Id);
 
-            Assert.AreEqual(bill.Id, newBill.Id);
+                Assert.AreEqual(bill.Id, newBill.Id);
+            }
         }
         [TestMethod]
         public void UpdateBill()
         {
-            billRepository.Create(bill);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Bills.Create(bill);
 
-            var changedBill = new Bill { Id = bill.Id };
+                var changedBill = new Bill { Id = bill.Id };
 
-            billRepository.Update(changedBill);
-            var updatedBill = billRepository.Get(bill.Id);
+                context.Bills.Update(changedBill);
+                var updatedBill = context.Bills.Get(bill.Id);
 
-            Assert.AreEqual(changedBill.Id, updatedBill.Id);
+                Assert.AreEqual(changedBill.Id, updatedBill.Id);
+            }
         }
         [TestMethod]
         public void DeleteBill()
         {
-            billRepository.Create(bill);
-            var newBill = billRepository.Get(bill.Id);
-            Assert.AreEqual(bill.Id, newBill.Id);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Bills.Create(bill);
+                var newBill = context.Bills.Get(bill.Id);
+                Assert.AreEqual(bill.Id, newBill.Id);
 
-            billRepository.Delete(bill.Id);
-            var deletedBill = billRepository.Get(bill.Id);
+                context.Bills.Delete(bill.Id);
+                var deletedBill = context.Bills.Get(bill.Id);
 
-            Assert.IsNull(deletedBill);
+                Assert.IsNull(deletedBill);
+            }
         }
     }
 }

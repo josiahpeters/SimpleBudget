@@ -40,7 +40,7 @@ namespace SimpleBudget.Tests
             //builder.RegisterType<BudgetRepository>().As<IRepository<Budget>>().InstancePerLifetimeScope();
             //builder.RegisterType<CategoryRepository>().As<IRepository<Category>>().InstancePerLifetimeScope();
             //builder.RegisterType<TransactionRepository>().As<IRepository<Transaction>>().InstancePerLifetimeScope();
-            builder.RegisterType<BillRepository>().As<IRepository<Bill>>().InstancePerLifetimeScope();
+            builder.RegisterType<BillRepository>().As<IBillRepository>().As<IRepository<Bill>>().InstancePerLifetimeScope();
 
             builder.RegisterType<RepositoryUnitOfWork>().As<IRepositoryUnitOfWork>().InstancePerLifetimeScope();
 

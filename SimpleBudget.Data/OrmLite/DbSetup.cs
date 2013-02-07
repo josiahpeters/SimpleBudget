@@ -17,37 +17,37 @@ namespace SimpleBudget.Data.OrmLite
             //db.ExecuteSql(String.Format("CREATE DATABASE {0}", databaseName));
             //db.ChangeDatabase(databaseName);
 
-            db.DropTable<CategoryToTransaction>();
+            //db.DropTable<CategoryToTransaction>();
             
-            db.DropTable<BudgetToTransaction>();
-            db.DropTable<BudgetToCategory>();
+            //db.DropTable<BudgetToTransaction>();
+            //db.DropTable<BudgetToCategory>();
 
-            db.DropTable<UserToTransaction>();
-            db.DropTable<UserToBudget>();
+            //db.DropTable<UserToTransaction>();
+            //db.DropTable<UserToBudget>();
 
-            db.DropTable<Transaction>();
-            db.DropTable<Bill>();
-            db.DropTable<Category>();
-            db.DropTable<Budget>();
-            db.DropTable<User>();
+            //db.DropTable<Transaction>();
+            //db.DropTable<Bill>();
+            //db.DropTable<Category>();
+            //db.DropTable<Budget>();
+            //db.DropTable<User>();
             
-            db.CreateTables
-            (
-                 true,
-                 typeof(User),
-                 typeof(Budget),
-                 typeof(Category),
-                 typeof(Bill),
-                 typeof(Transaction),
+            //db.CreateTables
+            //(
+            //     true,
+            //     typeof(User),
+            //     typeof(Budget),
+            //     typeof(Category),
+            //     typeof(Bill),
+            //     typeof(Transaction),
 
-                 typeof(UserToBudget),
-                 typeof(UserToTransaction),
+            //     typeof(UserToBudget),
+            //     typeof(UserToTransaction),
 
-                 typeof(BudgetToCategory),
-                 typeof(BudgetToTransaction),
+            //     typeof(BudgetToCategory),
+            //     typeof(BudgetToTransaction),
 
-                 typeof(CategoryToTransaction)
-            );
+            //     typeof(CategoryToTransaction)
+            //);
         }
     }
 }

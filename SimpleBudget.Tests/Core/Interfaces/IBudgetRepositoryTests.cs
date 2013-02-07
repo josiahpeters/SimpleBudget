@@ -26,11 +26,11 @@ namespace SimpleBudget.Tests.Core.Interfaces
 
         protected override void Initialize()
         {
-            userRepository = testSetup.Resolve<IUserRepository>();
-            budgetRepository = testSetup.Resolve<IBudgetRepository>();
-            categoryRepository = testSetup.Resolve<ICategoryRepository>();
-            transactionRepository = testSetup.Resolve<ITransactionRepository>();
-            
+            //userRepository = testSetup.Resolve<IUserRepository>();
+            //budgetRepository = testSetup.Resolve<IBudgetRepository>();
+            //categoryRepository = testSetup.Resolve<ICategoryRepository>();
+            //transactionRepository = testSetup.Resolve<ITransactionRepository>();
+
 
             user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User" };
             budget = new Budget { Id = Guid.NewGuid(), StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(12), Frequency = Frequency.Monthly };
@@ -54,98 +54,76 @@ namespace SimpleBudget.Tests.Core.Interfaces
                 Assert.IsNotNull(categories);
                 Assert.AreEqual(1, categories.Count);
             }
-            //using (var lifetime = testSetup.Container.BeginLifetimeScope())
-            //{
-            //    context = lifetime.Resolve<IRepositoryUnitOfWork>();
-
-            //    context.Budgets.Create(budget);
-            //    context.Categories.Create(category);
-
-            //    context.Budgets.AddCategoryToBudget(category.Id, budget.Id);
-
-            //    var categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
-
-            //    Assert.IsNotNull(categories);
-            //    Assert.AreEqual(1, categories.Count);
-            //}
         }
-        //[TestMethod]
-        //public void AddCategoryToBudget_GetCategoriesByBudgetId()
-        ////public void AddBudgetToUser(Guid budgetId, Guid userId)
-        //{
-        //    using (IRepositoryUnitOfWork context = testSetup.Resolve<IRepositoryUnitOfWork>())
-        //    {
-        //        context.Budgets.Create(budget);
-        //        context.Categories.Create(category);
-
-        //        context.Budgets.AddCategoryToBudget(category.Id, budget.Id);
-
-        //        var categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
-
-        //        Assert.IsNotNull(categories);
-        //        Assert.AreEqual(1, categories.Count);
-        //    }
-        //}
 
         [TestMethod]
         public void RemoveCategoryFromBudget()
         //public void RemoveBudgetFromUser(Guid budgetId, Guid userId)
         {
-            budgetRepository.Create(budget);
-            categoryRepository.Create(category);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
+                context.Categories.Create(category);
 
-            budgetRepository.AddCategoryToBudget(category.Id, budget.Id);
+                context.Budgets.AddCategoryToBudget(category.Id, budget.Id);
 
-            var categories = budgetRepository.GetCategoriesByBudgetId(budget.Id);
+                var categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
 
-            Assert.IsNotNull(categories);
-            Assert.AreEqual(1, categories.Count);
+                Assert.IsNotNull(categories);
+                Assert.AreEqual(1, categories.Count);
 
-            budgetRepository.RemoveCategoryFromBudget(category.Id, budget.Id);
+                context.Budgets.RemoveCategoryFromBudget(category.Id, budget.Id);
 
-            categories = budgetRepository.GetCategoriesByBudgetId(budget.Id);
+                categories = context.Budgets.GetCategoriesByBudgetId(budget.Id);
 
-            Assert.IsNotNull(categories);
-            Assert.AreEqual(0, categories.Count);
+                Assert.IsNotNull(categories);
+                Assert.AreEqual(0, categories.Count);
 
+            }
         }
 
         [TestMethod]
         public void AddTransactionToBudget_GetTransactionsByBudgetId()
         //public void AddBudgetToUser(Guid budgetId, Guid userId)
         {
-            budgetRepository.Create(budget);
-            transactionRepository.Create(transaction);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
+                context.Transactions.Create(transaction);
 
-            budgetRepository.AddTransactionToBudget(transaction.Id, budget.Id);
+                context.Budgets.AddTransactionToBudget(transaction.Id, budget.Id);
 
-            var transactions = budgetRepository.GetTransactionsByBudgetId(budget.Id);
+                var transactions = context.Budgets.GetTransactionsByBudgetId(budget.Id);
 
-            Assert.IsNotNull(transactions);
-            Assert.AreEqual(1, transactions.Count);
+                Assert.IsNotNull(transactions);
+                Assert.AreEqual(1, transactions.Count);
+            }
         }
 
         [TestMethod]
         public void RemoveTransactionFromBudget()
         //public void RemoveBudgetFromUser(Guid budgetId, Guid userId)
         {
-            budgetRepository.Create(budget);
-            transactionRepository.Create(transaction);
+            using (var context = testSetup.Resolve<IRepositoryUnitOfWork>())
+            {
+                context.Budgets.Create(budget);
+                context.Transactions.Create(transaction);
 
-            budgetRepository.AddTransactionToBudget(transaction.Id, budget.Id);
+                context.Budgets.AddTransactionToBudget(transaction.Id, budget.Id);
 
-            var transactions = budgetRepository.GetTransactionsByBudgetId(budget.Id);
+                var transactions = context.Budgets.GetTransactionsByBudgetId(budget.Id);
 
-            Assert.IsNotNull(transactions);
-            Assert.AreEqual(1, transactions.Count);
+                Assert.IsNotNull(transactions);
+                Assert.AreEqual(1, transactions.Count);
 
-            budgetRepository.RemoveTransactionFromBudget(transaction.Id, budget.Id);
+                context.Budgets.RemoveTransactionFromBudget(transaction.Id, budget.Id);
 
-            transactions = budgetRepository.GetTransactionsByBudgetId(budget.Id);
+                transactions = context.Budgets.GetTransactionsByBudgetId(budget.Id);
 
-            Assert.IsNotNull(transactions);
-            Assert.AreEqual(0, transactions.Count);
+                Assert.IsNotNull(transactions);
+                Assert.AreEqual(0, transactions.Count);
 
+            }
         }
     }
 }

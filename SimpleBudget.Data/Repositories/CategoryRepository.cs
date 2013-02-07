@@ -36,14 +36,28 @@ namespace SimpleBudget.Data
 
 		#endregion
 
-        #region IBudgetRepository implementation
+        #region ICategoryRepository implementation
+
+        public void AddTransactionToCategory(Guid transactionId, Guid categoryId)
+        {
+            var relationship = new CategoryToTransaction { TransactionId = transactionId, CategoryId = categoryId };
+
+            db.Insert(relationship);
+        }
+
+        public void RemoveTransactionFromCategory(Guid transactionId, Guid categoryId)
+        {
+            var relationship = new CategoryToTransaction { TransactionId = transactionId, CategoryId = categoryId };
+
+            db.Delete(relationship);
+        }
 
         public List<Transaction> GetTransactionsByCategoryId(Guid Id)
         {
-            throw new NotImplementedException();
+            return db.Select<Transaction>("SELECT * FROM Transaction INNER JOIN CategoryToTransaction ON Transaction.Id = TransactionId WHERE CategoryId = {0}", Id);
         }
 
 		#endregion
+
     }
 }
-
