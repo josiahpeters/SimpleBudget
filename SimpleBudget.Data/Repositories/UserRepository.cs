@@ -44,11 +44,6 @@ namespace SimpleBudget.Data
             return user != null;
         }
 
-        public List<Budget> GetBudgetsByUserId(Guid Id)
-        {
-            return db.Select<Budget>("SELECT * FROM Budget INNER JOIN UserToBudget ON Budget.Id = BudgetId WHERE UserId = @UserId", Id);
-        }
-
         public void AddBudgetToUser(Guid budgetId, Guid userId)
         {
             var relationship = new UserToBudget { UserId = userId, BudgetId = budgetId };
@@ -61,6 +56,11 @@ namespace SimpleBudget.Data
             var relationship = new UserToBudget { UserId = userId, BudgetId = budgetId };
 
             db.Delete(relationship);
+        }
+
+        public List<Budget> GetBudgetsByUserId(Guid Id)
+        {
+            return db.Select<Budget>("SELECT * FROM Budget INNER JOIN UserToBudget ON Budget.Id = BudgetId WHERE UserId = {0}", Id);
         }
 
         #endregion

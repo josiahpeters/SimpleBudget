@@ -103,6 +103,9 @@
     <Compile Include="AutofacMockModule.cs" />
     <Compile Include="AutofacTestSetup.cs" />
     <Compile Include="AutofacDataModule.cs" />
+    <Compile Include="Core\Interfaces\ICategoryRepositoryTests.cs" />
+    <Compile Include="Core\Interfaces\ITransactionRepositoryTests.cs" />
+    <Compile Include="Core\Interfaces\IBudgetRepositoryTests.cs" />
     <Compile Include="Core\Interfaces\IUserRepositoryTests.cs" />
     <Compile Include="Core\Interfaces\IRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -7,7 +7,7 @@ using SimpleBudget.Data.OrmLite;
 namespace SimpleBudget.Tests.Core.Interfaces
 {
     [TestClass]
-    public class IUserRepositoryTests : TestBase
+    public class ICategoryRepositoryTests : TestBase
     {
 
         IUserRepository userRepository;
@@ -23,21 +23,6 @@ namespace SimpleBudget.Tests.Core.Interfaces
 
             user = new User { Id = Guid.NewGuid(), FirstName = "Test", LastName = "User", Email = "testuser@test.com", DisplayName = "Sir. Test User" };
             budget = new Budget { Id = Guid.NewGuid(), StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(12), Frequency = Frequency.Monthly };
-        }
-
-        [TestMethod]
-        public void AuthenticateUser()
-        //public bool AuthenticateUser(string username, string password)
-        {
-            string password = "canada";
-
-            user.PasswordHash = Common.HashPassword(password);
-
-            userRepository.Create(user);
-
-            var isUserAuthenticated = userRepository.AuthenticateUser(user.Email, password);
-
-            Assert.IsTrue(isUserAuthenticated);
         }
 
         [TestMethod]
