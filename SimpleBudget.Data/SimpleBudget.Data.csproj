@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutofacDataModule.cs" />
     <Compile Include="OrmLite\DbSetup.cs" />
     <Compile Include="OrmLite\LowercaseNamingStrategy.cs" />
     <Compile Include="OrmLite\OrmLiteRepository.cs" />

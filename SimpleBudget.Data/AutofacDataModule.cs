@@ -1,9 +1,7 @@
 ﻿using Autofac;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.PostgreSQL;
-using SimpleBudget.Data;
 using SimpleBudget.Data.OrmLite;
-using SimpleBudget.DataMock.Repositories;
 using SimpleBudget.Interfaces;
 using SimpleBudget.Services;
 using System;
@@ -12,7 +10,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace SimpleBudget.Tests
+namespace SimpleBudget.Data
 {
     public class AutofacDataModule : Module
     {
@@ -44,10 +42,6 @@ namespace SimpleBudget.Tests
             builder.RegisterType<BillRepository>().As<IBillRepository>().As<IRepository<Bill>>().InstancePerLifetimeScope();
 
             builder.RegisterType<RepositoryUnitOfWork>().As<IRepositoryUnitOfWork>().InstancePerLifetimeScope();
-
-            builder.RegisterType<SimpleBudgetService>().As<ISimpleBudgetService>().InstancePerLifetimeScope();
-            
-            
 
             // make sure our mock provider is accessible through IVoiceProvider and MockProvider for when we need to fake validation for things.
             //builder.RegisterType<MockProvider>().As<IVoiceProvider>().As<MockProvider>().InstancePerLifetimeScope();

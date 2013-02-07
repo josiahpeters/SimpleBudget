@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="post" action="/auth/credentials">
+        <label>Username: </label>
+        <input type="text" name="username" />
+        <br />
+        <label>Password: </label>
+        <input type="text" name="password" /><br />
+        <input type="submit" value="Authenticate" />
+    </form>
+
+    <a href="#" class="login">login</a>
+    <br />
+    <a href="#" class="create">create</a>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
+    <script>
+
+        $(".login").click(function ()
+        {
+            $.post("/auth/credentials", { "Username": "josiahpeters@gmail.com", "Password": "canada" }, function (data)
+            {
+                console.log(data);
+            });
+
+            return false;
+        });
+        $(".create").click(function ()
+        {
+            $.post("/users/create", { "DisplayName": "Wookles", "FirstName": "Joey", "LastName": "Peters", "Email": "josiahpeters@gmail.com", "Password": "canada" }, function (data)
+            {
+                console.log(data);
+            });
+
+            return false;
+        });
+    </script>
+</body>
+</html>

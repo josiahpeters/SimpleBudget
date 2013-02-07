@@ -109,6 +109,7 @@
     <Compile Include="Core\Interfaces\IUserRepositoryTests.cs" />
     <Compile Include="Core\Interfaces\IRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SimpleBudgetServiceTests.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +121,10 @@
       <Project>{6202ee60-c8d5-4a46-8afe-04d6d5ce9207}</Project>
       <Name>SimpleBudget.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SimpleBudget.Services\SimpleBudget.Services.csproj">
+      <Project>{1a82092f-5097-4c06-9752-a107dce1ed7e}</Project>
+      <Name>SimpleBudget.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleBudget\SimpleBudget.csproj">
       <Project>{097e00bb-e262-4eb3-8560-2d4b13122ceb}</Project>
       <Name>SimpleBudget</Name>
@@ -127,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Services\" />
     <Folder Include="Website\" />
   </ItemGroup>
   <ItemGroup>
