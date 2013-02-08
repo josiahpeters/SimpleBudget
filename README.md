@@ -4,13 +4,16 @@ SimpleBudget
 REST endpoint structure
 
 Auth
+
     [Route("/auth/{provider}", "POST")]
 
 Users
+
     [Route("/users/", "POST")]
     [Route("/users/{UserId}/budgets/", "GET")]
 
 Budgets
+
     [Route("/budgets/","POST")]
     [Route("/budgets/{BudgetId}", "GET")]	 
     [Route("/budgets/{BudgetId}/delete")]
@@ -24,6 +27,7 @@ Budgets
     [Route("/budgets/{BudgetId}/transactions/remove", "POST")]
 
 Categories
+
     [Route("/categories/","POST")]
     [Route("/categories/{CategoryId}", "GET")]
     [Route("/categories/{CategoryId}/delete", "GET")]
@@ -33,6 +37,7 @@ Categories
     [Route("/categories/{CategoryId}/transactions/remove", "POST")]
 
 Transactions
+
     [Route("/transactions/","POST")]
     [Route("/transactions/{TransactionId}", "GET")]
     [Route("/transactions/{TransactionId}/delete", "GET")]
