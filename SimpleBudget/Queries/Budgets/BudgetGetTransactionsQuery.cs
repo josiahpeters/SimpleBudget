@@ -3,10 +3,10 @@ using ServiceStack.ServiceHost;
 
 namespace SimpleBudget
 {
-    [Route("/budgets/transactions")]
+    [Route("/budgets/{BudgetId}/transactions", "GET")]
 	public class BudgetGetTransactionsQuery
 	{
-		public Guid Id { get; set; }
+        public Guid BudgetId { get; set; }
 		
 		public BudgetGetTransactionsQuery ()
 		{

@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Categories\CategoryAddTransactionCommand.cs" />
+    <Compile Include="Commands\Categories\CategoryRemoveTransactionCommand.cs" />
+    <Compile Include="Commands\Categories\CategoryCreateCommand.cs" />
+    <Compile Include="Commands\Categories\CategoryDeleteCommand.cs" />
+    <Compile Include="Commands\Transactions\TransactionCreateCommand.cs" />
+    <Compile Include="Commands\Transactions\TransactionDeleteCommand.cs" />
     <Compile Include="Commands\Users\UserCreateCommand.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CustomCredentialsAuthProvider.cs" />
@@ -91,12 +97,18 @@
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBudgetRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Categories\CategoryGetTransactionsQuery.cs" />
+    <Compile Include="Queries\Categories\CategoryGetQuery.cs" />
     <Compile Include="Queries\CreateResponse.cs" />
+    <Compile Include="Queries\Transactions\TransactionGetQuery.cs" />
+    <Compile Include="Queries\Users\UserResponse.cs" />
+    <Compile Include="Queries\Users\UserGetBudgetsQuery.cs" />
+    <Compile Include="Services\ITransactionService.cs" />
+    <Compile Include="Services\ICategoryService.cs" />
     <Compile Include="Services\ISimpleBudgetService.cs" />
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\IBudgetService.cs" />
     <Compile Include="Commands\Budgets\BudgetCreateCommand.cs" />
-    <Compile Include="Commands\Budgets\BudgetRemoveCommand.cs" />
     <Compile Include="Commands\Budgets\BudgetAddCategoryCommand.cs" />
     <Compile Include="Commands\Budgets\BudgetRemoveCategoryCommand.cs" />
     <Compile Include="Commands\Budgets\BudgetAddTransactionCommand.cs" />
@@ -112,13 +124,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Queries\Users\" />
-    <Folder Include="Commands\Budgets\" />
-    <Folder Include="Queries\Budgets\" />
-    <Folder Include="Queries\Categories\" />
-    <Folder Include="Queries\Transactions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

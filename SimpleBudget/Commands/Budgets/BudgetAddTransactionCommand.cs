@@ -3,12 +3,16 @@ using ServiceStack.ServiceHost;
 
 namespace SimpleBudget
 {
-    [Route("/budgets/transactions/add")]
-	public class BudgetAddTransactionCommand
-	{
-		public BudgetAddTransactionCommand ()
-		{
-		}
-	}
+    [Route("/budgets/{BudgetId}/transactions/add", "POST")]
+    public class BudgetAddTransactionCommand
+    {
+        public Guid BudgetId { get; set; }
+
+        public Guid TransactionId { get; set; }
+
+        public BudgetAddTransactionCommand()
+        {
+        }
+    }
 }
 

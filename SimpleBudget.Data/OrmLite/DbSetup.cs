@@ -11,43 +11,50 @@ namespace SimpleBudget.Data.OrmLite
     {
         public static void Setup(IDbConnection db)
         {
-            //string databaseName = db.Database;
-            //db.ChangeDatabase("postgres");
-            //db.ExecuteSql(String.Format("DROP DATABASE {0}", databaseName));
-            //db.ExecuteSql(String.Format("CREATE DATABASE {0}", databaseName));
-            //db.ChangeDatabase(databaseName);
+            var drop = false;
 
-            //db.DropTable<CategoryToTransaction>();
+            //drop = true;
             
-            //db.DropTable<BudgetToTransaction>();
-            //db.DropTable<BudgetToCategory>();
+            if (drop)
+            {
+                //string databaseName = db.Database;
+                //db.ChangeDatabase("postgres");
+                //db.ExecuteSql(String.Format("DROP DATABASE {0}", databaseName));
+                //db.ExecuteSql(String.Format("CREATE DATABASE {0}", databaseName));
+                //db.ChangeDatabase(databaseName);
 
-            //db.DropTable<UserToTransaction>();
-            //db.DropTable<UserToBudget>();
+                db.DropTable<CategoryToTransaction>();
 
-            //db.DropTable<Transaction>();
-            //db.DropTable<Bill>();
-            //db.DropTable<Category>();
-            //db.DropTable<Budget>();
-            //db.DropTable<User>();
-            
-            //db.CreateTables
-            //(
-            //     true,
-            //     typeof(User),
-            //     typeof(Budget),
-            //     typeof(Category),
-            //     typeof(Bill),
-            //     typeof(Transaction),
+                db.DropTable<BudgetToTransaction>();
+                db.DropTable<BudgetToCategory>();
 
-            //     typeof(UserToBudget),
-            //     typeof(UserToTransaction),
+                db.DropTable<UserToTransaction>();
+                db.DropTable<UserToBudget>();
 
-            //     typeof(BudgetToCategory),
-            //     typeof(BudgetToTransaction),
+                db.DropTable<Transaction>();
+                db.DropTable<Bill>();
+                db.DropTable<Category>();
+                db.DropTable<Budget>();
+                db.DropTable<User>();
 
-            //     typeof(CategoryToTransaction)
-            //);
+                db.CreateTables
+                (
+                     true,
+                     typeof(User),
+                     typeof(Budget),
+                     typeof(Category),
+                     typeof(Bill),
+                     typeof(Transaction),
+
+                     typeof(UserToBudget),
+                     typeof(UserToTransaction),
+
+                     typeof(BudgetToCategory),
+                     typeof(BudgetToTransaction),
+
+                     typeof(CategoryToTransaction)
+                );
+            }
         }
     }
 }

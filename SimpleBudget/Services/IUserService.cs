@@ -1,5 +1,4 @@
-﻿using SimpleBudget.Commands;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +9,7 @@ namespace SimpleBudget.Services
     public interface IUserService
     {
 		CreateResponse Post(UserCreateCommand command);
+
+        List<BudgetResponse> Get(UserGetBudgetsQuery query);
     }
 }

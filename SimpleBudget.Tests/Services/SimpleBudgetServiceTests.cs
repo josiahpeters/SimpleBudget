@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceStack.ServiceClient.Web;
-using SimpleBudget.Commands;
 using SimpleBudget.Services;
 using SimpleBudget.Queries;
 

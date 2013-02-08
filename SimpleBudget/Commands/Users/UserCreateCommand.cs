@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SimpleBudget.Commands
+namespace SimpleBudget
 {
-    [Route("/users/create", "POST")]
+    [Route("/users/", "POST")]
     public class UserCreateCommand
     {
         public string DisplayName { get; set; }

@@ -18,7 +18,7 @@ namespace SimpleBudget
 
 		bool Post(BudgetRemoveTransactionCommand command);
 
-		List<BudgetResponse> Get(BudgetGetQuery query);
+		BudgetResponse Get(BudgetGetQuery query);
 
 		List<CategoryResponse> Get(BudgetGetCategoriesQuery query);
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SimpleBudget.Services
 {
-    public interface ISimpleBudgetService : IService, IUserService, IBudgetService
+    public interface ISimpleBudgetService : IService, IUserService, IBudgetService, ICategoryService, ITransactionService
     {
 
     }
