@@ -17,7 +17,7 @@ namespace SimpleBudget.Services
             this.repositoryUnitOfWork = repositoryUnitOfWork;
         }
         [Authenticate]
-        public object Post(UserCreateCommand command)
+		public CreateResponse Post(UserCreateCommand command)
         {
             var user = new User
             {
@@ -34,5 +34,54 @@ namespace SimpleBudget.Services
             return new CreateResponse { Id = user.Id };
             
         }
+
+		#region IBudgetService implementation
+
+		public CreateResponse Post (BudgetCreateCommand command)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public bool Post (BudgetDeleteCommand command)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public bool Post (BudgetAddCategoryCommand command)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public bool Post (BudgetAddTransactionCommand command)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public bool Post (BudgetRemoveCategoryCommand command)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public bool Post (BudgetRemoveTransactionCommand command)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public List<BudgetResponse> Get (BudgetGetQuery query)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public List<CategoryResponse> Get (BudgetGetCategoriesQuery query)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public List<TransactionResponse> Get (BudgetGetTransactionsQuery query)
+		{
+			throw new NotImplementedException ();
+		}
+
+		#endregion
     }
 }

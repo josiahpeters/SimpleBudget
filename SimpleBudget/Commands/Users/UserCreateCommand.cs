@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SimpleBudget.Commands
 {
-    [Route("/users/create")]
+    [Route("/users/create", "POST")]
     public class UserCreateCommand
     {
         public string DisplayName { get; set; }
