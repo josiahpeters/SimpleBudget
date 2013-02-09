@@ -1,0 +1,120 @@
+﻿html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+    background-color: #fbfbfb;
+    color: #444;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #0088cc;
+}
+
+    a:hover {
+        /*text-decoration: underline;*/
+        color: #0088cc;
+    }
+
+        a:hover i {
+            text-decoration: none;
+        }
+
+hr {
+    overflow: hidden;
+    clear: both;
+    height: 0px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    table .numeric {
+        text-align: right;
+    }
+
+    table tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+    table tbody tr:hover {
+        background-color: #eee;
+    }
+
+    table th, table td {
+        padding: 8px 12px;
+        line-height: 1em;
+    }
+
+    table th {
+        font-weight: normal;
+        font-size: .75em;
+        color: #777;
+        text-align: left;
+    }
+
+    table td {
+        font-size: .875em;
+    }
+
+
+
+.alert, .alert h4 {
+    color: #c09853;
+}
+
+.alert {
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+    .alert.success {
+        color: #468847;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+
+    .alert .close {
+        position: relative;
+        top: -2px;
+        right: -21px;
+        line-height: 20px;
+    }
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000000;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}

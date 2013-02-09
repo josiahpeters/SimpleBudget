@@ -1,0 +1,157 @@
+﻿form {
+    line-height: 1.5em;
+}
+
+legend {
+    display: none;
+}
+
+dl {
+    vertical-align: top;
+    display: block;
+}
+
+dt {
+    display: block;
+    margin: 6px 0;
+}
+
+    dt input {
+        vertical-align: middle;
+    }
+
+    dt label {
+        font-weight: bold;
+        vertical-align: middle;
+    }
+
+dd {
+    vertical-align: middle;
+    display: block;
+    margin: 0;
+}
+
+    dd > input, dd > textarea {
+        font-family: Helvetica, arial;
+        padding: 7px 8px;
+        outline: none;
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    dd > textarea {
+        min-height: 75px;
+    }
+
+.chzn-choices {
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+}
+
+.chzn-select {
+    width: 100%;
+}
+
+button.green, input[type=submit].green {
+    background-color: #7fbf4d;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+    background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+    background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+    background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+    background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+    background-image: linear-gradient(top, #7fbf4d, #63a62f);
+    border: 1px solid #63a62f;
+    border-bottom: 1px solid #5b992b;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+    box-shadow: inset 0 1px 0 0 #96ca6d;
+    color: #fff;
+    font-weight: bold;
+    padding: 7px 0 8px 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 #4c9021;
+    width: 150px;
+}
+
+    button.green:hover, input[type=submit].green:hover {
+        background-color: #76b347;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+        background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+        background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+        background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+        background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+        background-image: linear-gradient(top, #76b347, #5e9e2e);
+        -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+        box-shadow: inset 0 1px 0 0 #8dbf67;
+        cursor: pointer;
+    }
+
+    button.green:active, input[type=submit].green:active {
+        border: 1px solid #5b992b;
+        border-bottom: 1px solid #538c27;
+        -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+        box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    }
+
+button.gray, input[type=submit].gray {
+    background-color: #eeeeee;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: linear-gradient(top, #eeeeee, #cccccc);
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 0 0 #ddd;
+    box-shadow: inset 0 1px 0 0 #ddd;
+    color: #333;
+    font-weight: bold;
+    padding: 7px 0 8px 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 #eee;
+    width: 150px;
+}
+
+    button.gray:hover, input[type=submit].gray:hover {
+        background-color: #dddddd;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+        background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+        background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+        background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+        background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+        background-image: linear-gradient(top, #dddddd, #bbbbbb);
+        border: 1px solid #bbb;
+        border-bottom: 1px solid #999;
+        cursor: pointer;
+        text-shadow: 0 1px 0 #ddd;
+    }
+
+    button.gray:active, input[type=submit].gray:active {
+        border: 1px solid #aaa;
+        border-bottom: 1px solid #888;
+        -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+        box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    }
+
+.iconArrow, .iconArrowLeft {
+    background-image: url(http://mystateusa.com/edit/images/iconArrow.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding: 0px 14px 2px 0px;
+}
+
+.iconArrowLeft {
+    background-position: left center;
+    padding: 0px 0px 2px 14px;
+}
+
+    .iconArrow:hover, .iconArrowLeft:hover {
+        background-image: url(http://mystateusa.com/edit/images/iconArrowHover.png);
+    }
