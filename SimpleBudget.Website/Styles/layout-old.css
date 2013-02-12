@@ -1,35 +1,20 @@
-﻿/* COLORS:
-
-    Base Blue: 30A3DA
-    Highlight Blue: 33B5E5
-    Dark Gray: 444444
-    Medium Gray: 888888
-    Light Gray: E9E9E9
-    Border: D8D8D8
-    Green: 86C447
-    Yellow: FDC266
-    Orange: F77744
-     
-    
-*/
-header {
+﻿header {
     height: 50px;
     line-height: 50px;
-    background-color: #26A3DD;
-    color: #fff;
+    background-color: #2a2a2a;
+    color: #ddd;
 }
-
 
     header .row {
         overflow: visible;
     }
 
     header a {
-        color: #fff;
+        color: #ccc;
     }
 
         header a:visited {
-            color: #fff;
+            color: #ccc;
         }
 
         header a:hover {
@@ -59,7 +44,7 @@ header {
         }
 
             header nav > ul > li:hover {
-                background-color: #33B5E5;
+                background-color: #3f3f3f;
             }
 
                 header nav > ul > li:hover > a {
@@ -67,17 +52,10 @@ header {
                 }
 
             header nav > ul > li > a > i {
-                margin-right: .25em;
-                /*vertical-align: top !important;
+                vertical-align: top !important;
                 line-height: 45px !important;
-                font-size: .875em;*/
+                font-size: .875em;
             }
-
-                header nav > ul > li > a > i.icon-sort-down {
-                    vertical-align: top !important;
-                    line-height: 45px !important;
-                }
-
 
     header .sublist {
         display: none;
@@ -105,17 +83,17 @@ header {
             }
 
                 header .sublist li a:hover {
-                    color: #30A3DA;
-                    background-color: #E9E9E9 !important;
+                    color: #1550ba;
+                    background-color: #eeeeee !important;
                 }
 
             header .sublist li:first-child {
-                border-top: 1px solid #D8D8D8;
+                border-top: 1px solid #eeeeee;
             }
 
         header .sublist li {
             position: relative;
-            border-bottom: 1px solid #D8D8D8;
+            border-bottom: 1px solid #eeeeee;
         }
 
         header .sublist a {
@@ -138,30 +116,22 @@ header {
             width: 30px;
             height: 30px;
             vertical-align: middle;
-            /*border: 1px solid #D8D8D8;*/
+            /*border: 1px solid #ddd;*/
         }
 
 div.container.info {
-    background-color: #E9E9E9;
-    border-top: 1px solid #D8D8D8;
-    border-bottom: 1px solid #D8D8D8;
+    background-color: #dfdfdf;
+    border-bottom: 1px solid #ccc;
+    padding: 1.25em 0;
     margin-bottom: 1em;
-    color: #999;
-    padding: .25em;
 }
 
     div.container.info .row {
         vertical-align: middle;
     }
 
-    div.container.info li {
-        display: inline-block;
-        margin-right: .25em;
-    }
-
     div.container.info h2 {
-        font-size: 1em;
-        display: inline-block;
+        padding: 4px 0;
     }
 
 
@@ -201,141 +171,99 @@ ul.nav {
         }
 
 .master-detail {
-    position: relative;
-    border: 1px solid #D8D8D8;
 }
 
     .master-detail .master {
         margin-right: -1px;
-        border-right: 1px solid #D8D8D8;
-        position: absolute;
-        height: 100%;
-        min-height: 200px;
+        border-right: 1px solid #ccc;
     }
 
         .master-detail .master > li {
             list-style: none;
-            border-bottom: 1px solid #D8D8D8;
-            display: block;
-            margin-right: -1px;
         }
 
-            /*.master-detail .master > li > a {
+            .master-detail .master > li > a {
                 display: block;
                 padding: 8px 12px;
                 margin-right: -1px;
                 border: 1px solid transparent;
-            }*/
+            }
 
-            .master-detail .master > li.selected {
+            .master-detail .master > li.selected > a {
+                border: 1px solid #ccc;
                 border-right-color: transparent;
                 background-color: #fff;
             }
 
-    .master-detail .detail-container {
-        margin: 3.8%;
-        margin-left: 0;
+    .master-detail .details {
+        padding: 0 4.85%;
     }
 
 ul.budgets li {
     list-style: none;
     display: block;
-    border: 1px solid #D8D8D8;
-    border-top: none;
-    height: 75px;
-    overflow: hidden;
-    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
 }
 
-.budget:hover:not(.selected) {
-    background-color: #E9E9E9;
-    margin-right: 0px !important;
-    border-right: 0px solid transparent !important;
-}
-
-ul.budgets li:first-child {
-    border: 1px solid #D8D8D8;
-}
-
-.vertical-stack {
-    height: 100%;
-    margin: .25em 1.5em;
-    display: inline-block;
-}
-
-    .vertical-stack .title, .vertical-stack .description {
-        height: 50%;
+    ul.budgets li .budget {
+        padding: 10px;
     }
 
+div.budget > div.percentage {
+    position: relative;
+    border: 1px solid #aaa;
+    display: block;
+    width: 150px;
+    height: 18px;
+    margin-left: 1em;
+    background-color: #fff;
+}
 
-.title {
+    div.budget > div.percentage > .percentage-value {
+        display: block;
+        width: 100%;
+        height: 18px;
+        background-color: #97cd40;
+    }
+
+    div.budget > div.percentage > div.yellow {
+        background-color: #d4bf4a;
+    }
+
+    div.budget > div.percentage > div.red {
+        background-color: #cd7640;
+    }
+
+div.budget .name {
+    display: inline-block;
     font-size: 1.25em;
-    font-weight: bold;
+    vertical-align: top;
+    padding: .25em;
+    height: 40px;
+    line-height: 1em;
+    width: 55%;
+}
+
+div.budget .amount {
+    display: inline-block;
+    width: 30%;
+    margin-right: 1em;
+    height: 40px;
+}
+
+div.budget .spent {
+    font-size: 1em;
+    text-align: right;
+    display: block;
+    vertical-align: middle;
     line-height: 2em;
 }
 
-.description {
-    color: #888;
-}
-
-.clear {
-    clear: both;
-}
-
-.budget {
-    position: relative;
-    cursor: pointer;
-}
-
-    .budget .amount {
-        float: right;
-        text-align: right;
-    }
-
-        .budget .amount .title {
-            color: #86C447;
-        }
-
-    .budget div.health {
-        position: absolute;
-        width: 10px;
-        display: block;
-        height: 100%;
-        vertical-align: middle;
-        background-color: #86C447;
-    }
-
-    .budget.yellow div.health {
-        background-color: #FDC266;
-    }
-
-    .budget.yellow .amount .title {
-        color: #FDC266;
-    }
-
-    .budget.red div.health {
-        background-color: #F77744;
-    }
-
-    .budget.red .amount .title {
-        color: #F77744;
-    }
-
-.master .title {
-    font-size: 1em;
-    line-height: 1.5em;
-}
-
-.master .description {
+div.budget .budgeted {
     font-size: .875em;
-}
-
-.notification {
-    position: fixed;
-    display: none;
-    top: 75px;
-    left: 20%;
-    max-width: 1140px;
-    min-width: 755px;
-    margin: 0 auto;
+    text-align: right;
+    display: block;
+    vertical-align: middle;
+    line-height: 1em;
 }

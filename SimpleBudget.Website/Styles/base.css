@@ -49,11 +49,16 @@ table {
     }
 
     table tr {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #D8D8D8;
+    }
+
+    table tbody tr {
+        border: 1px solid #D8D8D8;
+        border-top: none;
     }
 
     table tbody tr:hover {
-        background-color: #eee;
+        background-color: #E9E9E9;
     }
 
     table th, table td {

@@ -117,6 +117,7 @@
     <Content Include="jqunback-1.51.min.js" />
     <Content Include="README.txt" />
     <Content Include="Styles\base.css" />
+    <Content Include="Styles\layout-old.css" />
     <Content Include="Styles\font-awesome-ie7.min.css" />
     <Content Include="Styles\font-awesome.css" />
     <Content Include="Styles\font-awesome.min.css" />
