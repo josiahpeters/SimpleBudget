@@ -21,10 +21,10 @@ namespace SimpleBudget.Data
 
             var connectionFactory = new OrmLiteConnectionFactory("Server=127.0.0.1;Port=5432;Database=transactions;User Id=postgres;Password=canada;", false, PostgreSqlDialect.Provider);
 
-            using (var db = connectionFactory.OpenDbConnection())
-            {
-                DbSetup.Setup(db);
-            }
+            //using (var db = connectionFactory.OpenDbConnection())
+            //{
+            //    DbSetup.Setup(db);
+            //}
 
             builder.Register(c => connectionFactory).As<IDbConnectionFactory>();
             builder.Register(c => connectionFactory.Open()).As<IDbConnection>().InstancePerLifetimeScope();

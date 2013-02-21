@@ -141,7 +141,7 @@
     <Content Include="Budgets2.cshtml" />
     <Content Include="Signup.cshtml" />
     <Content Include="Default.cshtml" />
-    <None Include="Dashboard.cshtml" />
+    <Content Include="Dashboard.cshtml" />
     <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\josiah_small.jpg" />
@@ -179,6 +179,7 @@
     <Content Include="font\FontAwesome.otf" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Shared\SignupLayout.cshtml" />
+    <None Include="Properties\PublishProfiles\pugna.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -95,7 +95,8 @@ button.green, input[type=submit].green, a.green {
         box-shadow: inset 0 0 8px 4px #5f912e, 0 1px 0 0 #5f912e;
     }
 
-button.gray, input[type=submit].gray {
+button.gray, input[type=submit].gray, a.gray {
+    display: inline-block;
     background-color: #d5d5d5;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d5d5d5), color-stop(100%, #c1c1c1));
     background-image: -webkit-linear-gradient(top, #d5d5d5, #c1c1c1);
@@ -114,7 +115,7 @@ button.gray, input[type=submit].gray {
     font-size: 1em;
 }
 
-    button.gray:hover, input[type=submit].gray:hover {
+    button.gray:hover, input[type=submit].gray:hover, a.gray:hover {
         background-color: #c1c1c1;
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c1c1c1), color-stop(100%, #adadad));
         background-image: -webkit-linear-gradient(top, #c1c1c1, #adadad);
@@ -126,7 +127,7 @@ button.gray, input[type=submit].gray {
         text-shadow: 0 1px 0 #ddd;
     }
 
-    button.gray:active, input[type=submit].gray:active {
+    button.gray:active, input[type=submit].gray:active, a.gray:active {
         -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #d5d5d5;
         box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #d5d5d5;
     }
