@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -78,6 +79,9 @@
     <Reference Include="ServiceStack.OrmLite.SqlServer">
       <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.35\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Razor">
+      <HintPath>..\packages\ServiceStack.Razor.3.9.36\lib\net40\ServiceStack.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Redis">
       <HintPath>..\packages\ServiceStack.Redis.3.9.35\lib\net35\ServiceStack.Redis.dll</HintPath>
     </Reference>
@@ -96,6 +100,22 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\ServiceStack.Razor.3.9.36\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\ServiceStack.Razor.3.9.36\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\ServiceStack.Razor.3.9.36\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\ServiceStack.Razor.3.9.36\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -109,8 +129,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\js\ss-validation.js" />
-    <Content Include="default.htm" />
-    <Content Include="default.html" />
+    <Content Include="Images\bg-scrollbar-thumb-y.png" />
+    <Content Include="Images\bg-scrollbar-track-y.png" />
+    <Content Include="Images\bg-scrollbar-trackend-y.png" />
+    <Content Include="old\old.html" />
+    <Content Include="old\Copy of default.cshtml" />
+    <Content Include="Budgets.cshtml" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.tinyscrollbar.min.js" />
+    <Content Include="Transactions.cshtml" />
+    <Content Include="Budgets2.cshtml" />
+    <None Include="Default.cshtml" />
     <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\josiah_small.jpg" />
@@ -135,6 +164,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +173,7 @@
     <Content Include="font\fontawesome-webfont.ttf" />
     <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="font\FontAwesome.otf" />
+    <Content Include="Views\Shared\Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,9 +181,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SimpleBudget.Data\SimpleBudget.Data.csproj">
       <Project>{6202ee60-c8d5-4a46-8afe-04d6d5ce9207}</Project>
@@ -180,7 +209,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>20294</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:1753/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

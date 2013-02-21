@@ -1,0 +1,344 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row master-detail">
+        <ul class="master budgets-small col4">
+            <li class="budget green">
+                <div class="health"></div>
+                <div class="vertical-stack">
+                    <div class="title">Bills</div>
+                    <div class="description">&nbsp;</div>
+                </div>
+                <div class="amount vertical-stack">
+                    <div class="title">$1250.00</div>
+                    <div class="description">/ $1000.00</div>
+                </div>
+            </li>
+            <li class="budget red selected">
+                <div class="health"></div>
+                <div class="vertical-stack">
+                    <div class="title">Groceries</div>
+                    <div class="description">&nbsp;</div>
+                </div>
+                <div class="amount vertical-stack">
+                    <div class="title">$75.00</div>
+                    <div class="description">/ $100.00</div>
+                </div>
+            </li>
+            <li class="budget yellow">
+                <div class="health"></div>
+                <div class="vertical-stack">
+                    <div class="title">Food</div>
+                    <div class="description">&nbsp;</div>
+                </div>
+                <div class="amount vertical-stack">
+                    <div class="title">$58.00</div>
+                    <div class="description">/ $300.00</div>
+                </div>
+            </li>
+            <li class="budget green">
+                <div class="health"></div>
+                <div class="vertical-stack">
+                    <div class="title">Entertainment</div>
+                    <div class="description">&nbsp;</div>
+                </div>
+                <div class="amount vertical-stack">
+                    <div class="title">$150.00</div>
+                    <div class="description">/ $200.00</div>
+                </div>
+            </li>
+        </ul>
+        <div class="col4"></div>
+        <div class="details col8 last">
+            <div class="detail-container">
+                <h3>Groceries: Transactions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col3">
+            <div class="nav-container">
+                <ul class="nav">
+                    <li class="header">Budgets</li>
+                    <li><a href="#">View Budgets</a></li>
+                    <li class="active"><a href="#">Create New Budget</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col9 last">
+            <ul class="budgets">
+                <li class="budget green">
+                    <div class="health"></div>
+                    <div class="vertical-stack">
+                        <div class="title">Bills</div>
+                        <div class="description">$25 remaining for 2 weeks.</div>
+                    </div>
+                    <div class="amount vertical-stack">
+                        <div class="title">$1250.00</div>
+                        <div class="description">/ $1000.00</div>
+                    </div>
+                </li>
+                <li class="budget red">
+                    <div class="health"></div>
+                    <div class="vertical-stack">
+                        <div class="title">Groceries</div>
+                        <div class="description">$345 remaining for 2 weeks.</div>
+                    </div>
+                    <div class="amount vertical-stack">
+                        <div class="title">$75.00</div>
+                        <div class="description">/ $100.00</div>
+                    </div>
+                </li>
+                <li class="budget yellow">
+                    <div class="health"></div>
+                    <div class="vertical-stack">
+                        <div class="title">Food</div>
+                        <div class="description">$15 remaining for 2 weeks.</div>
+                    </div>
+                    <div class="amount vertical-stack">
+                        <div class="title">$58.00</div>
+                        <div class="description">/ $300.00</div>
+                    </div>
+                </li>
+                <li class="budget green">
+                    <div class="health"></div>
+                    <div class="vertical-stack">
+                        <div class="title">Entertainment</div>
+                        <div class="description">$95 remaining for 2 weeks.</div>
+                    </div>
+                    <div class="amount vertical-stack">
+                        <div class="title">$150.00</div>
+                        <div class="description">/ $200.00</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col3">
+            <div class="nav-container">
+                <ul class="nav">
+                    <li class="header">Budgets</li>
+                    <li><a href="#">View Budgets</a></li>
+                    <li class="active"><a href="#">Create New Budget</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="details col9 last">
+            <form>
+                <fieldset>
+                    <legend>Create Category</legend>
+                    <dl>
+                        <dt>
+                            <label for="Name">Name:</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Name" placeholder="Group Name" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <label for="Notes">Notes:</label>
+                        </dt>
+                        <dd>
+                            <textarea id="Notes" placeholder="Description of the group."></textarea>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+
+                            <label for="Hidden">Hidden:</label>
+                            <input type="checkbox" id="Hidden" />
+                        </dt>
+                    </dl>
+                    <hr />
+                    <button id="btnSaveGroup" class="green">Save Group</button>
+                    <button id="btnDeleteGroup" class="gray">Delete Group</button>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col3">
+            <div class="nav-container">
+                <ul class="nav">
+                    <li class="header">Budgets</li>
+                    <li class="active"><a href="#">View Budgets</a></li>
+                    <li><a href="#">Create New Budget</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col9 last master-detail">
+            <ul class="master col3">
+                <li><a href="#">Bills</a></li>
+                <li class="selected"><a href="#">Groceries</a></li>
+                <li><a href="#">Eating out</a></li>
+                <li><a href="#">Entertainment</a></li>
+            </ul>
+            <div class="col3"></div>
+            <div class="details col8 last">
+                <h3>Groceries: Transactions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <ul>
+            <li>
+                <span class="name">Daily</span>
+                <span class="spent">250</span>
+                <span class="budgeted">1500</span>
+                <div class="percentage">
+                    <div class="percentage-value"></div>
+                </div>
+            </li>
+            <li>
+                <span class="name">Budget 2</span>
+                <span class="spent">250</span>
+                <span class="budgeted">1500</span>
+                <div class="percentage">
+                    <div class="percentage-value"></div>
+                </div>
+            </li>
+            <li>
+                <span class="name">Budget 3</span>
+                <span class="spent">250</span>
+                <span class="budgeted">1500</span>
+                <div class="percentage">
+                    <div class="percentage-value"></div>
+                </div>
+            </li>
+            <li>
+                <span class="name">Budget 4</span>
+                <span class="spent">250</span>
+                <span class="budgeted">1500</span>
+                <div class="percentage">
+                    <div class="percentage-value"></div>
+                </div>
+            </li>
+            <li>
+                <span class="name">Budget 5</span>
+                <span class="spent">250</span>
+                <span class="budgeted">1500</span>
+                <div class="percentage">
+                    <div class="percentage-value"></div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<hr />
+<div class="container notification">
+    <div class="row">
+        <div class="col4">
+        </div>
+        <div class="col8 last">
+            <div class="alert success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Success:</strong> New budget "Daily" has been created. New budget "Daily" has been created. New budget "Daily" has been created.
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
+</body>
+</html>

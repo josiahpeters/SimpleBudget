@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Funq;
 using ServiceStack.Configuration;
+using ServiceStack.Razor;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.WebHost.Endpoints;
@@ -27,24 +28,26 @@ namespace SimpleBudget.Website
                 ContainerBuilder builder = new ContainerBuilder();
 
                 builder.RegisterModule(new AutofacDataModule());
-                
+
                 // register our base service
                 builder.RegisterType<SimpleBudgetService>().As<ISimpleBudgetService>().InstancePerLifetimeScope();
 
                 // register custom authorize provider
                 builder.RegisterType<CustomCredentialsAuthProvider>().As<IAuthProvider>().InstancePerLifetimeScope();
-                
+
 
                 IContainerAdapter adapter = new AutofacIocAdapter(builder.Build());
                 container.Adapter = adapter;
 
-                Plugins.Add(
-                    new AuthFeature(() => new AuthUserSession(), 
-                        new IAuthProvider[] 
-                        {
-                            adapter.Resolve<IAuthProvider>(), //HTML Form post of UserName/Password credentials
-                        }
-                ));
+                Plugins.Add(new RazorFormat());
+                
+                //Plugins.Add(
+                //    new AuthFeature(() => new AuthUserSession(),
+                //        new IAuthProvider[] 
+                //        {
+                //            adapter.Resolve<IAuthProvider>(), //HTML Form post of UserName/Password credentials
+                //        }
+                //));
             }
         }
 

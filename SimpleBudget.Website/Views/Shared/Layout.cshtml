@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="/Styles/font-awesome.css" rel="stylesheet" />
+    <link href="/Styles/base.css" rel="stylesheet" />
+    <link href="/Styles/grid.css" rel="stylesheet" />
+    <link href="/Styles/layout.css" rel="stylesheet" />
+    <link href="/Styles/forms.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header class="container">
+        <div class="row">
+            <h1 class="col3">SimpleBudget</h1>
+            <nav class="col9 last">
+                <ul>
+                    <li><a href="/Default"><i class="icon-dashboard"></i>Dashboard</a></li>
+                    <li><a href="/Budgets"><i class="icon-money"></i>Budgets</a></li>
+                    <li><a href="/Transactions"><i class="icon-tasks"></i>Transactions</a></li>
+                    <li class="dropdown-menu"><a href="#">Create <i class="icon-sort-down"></i></a>
+                        <ul class="sublist">
+                            <li><a href="#"><i class="icon-plus-sign"></i>New Budget</a></li>
+                            <li><a href="#"><i class="icon-plus-sign"></i>New Category</a></li>
+                            <li><a href="#"><i class="icon-plus-sign"></i>New Transaction</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-menu profile">
+                        <img src="/Images/josiah_small.jpg" />
+                        <a href="#">Josiah Peters <i class="icon-sort-down"></i></a>
+
+                        <ul class="sublist">
+                            <li><a href="#"><i class="icon-user"></i>My Account</a></li>
+                            <li><a href="#"><i class="icon-signout"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container subnav">
+        <div class="row">
+            <div class="col2">
+                <h3>@ViewBag.SubPageTitle</h3>
+            </div>
+            <nav class="col10 last">
+                <ul class="tabs">
+                    @foreach (NavigationItem navigationItem in ViewBag.NavigationItems as List<NavigationItem>)
+                    {
+                        <li @(navigationItem.Selected ? "class=selected" : "")><a href="@navigationItem.Url">@navigationItem.Text</a></li>                    
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+    @RenderBody()
+    @*<script src="/Scripts/jquery.js"></script>*@
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/Scripts/jquery.tinyscrollbar.min.js"></script>
+    <script>
+        $(document).ready(function ()
+        {
+            $('#scrollbar1').tinyscrollbar();
+        });
+    </script>
+</body>
+</html>

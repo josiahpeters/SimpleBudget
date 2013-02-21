@@ -1,0 +1,202 @@
+﻿@{
+    Layout = "Layout";
+    ViewBag.SubPageTitle = "Budgets";
+    ViewBag.NavigationItems = new List<NavigationItem> { new NavigationItem { Text = "Budgets", Selected = true }, new NavigationItem { Text = "Create New Budget" }, new NavigationItem { Text = "Help" } }; //new 
+}
+
+<div class="container">
+    <div class="row master-detail">
+        <div id="scrollbar1" class="col4 master">
+            <div class="scrollbar">
+                <div class="track">
+                    <div class="thumb">
+                        <div class="end"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="viewport">
+                <div class="overview">
+                    <ul class=" budgets-small">
+                        <li class="budget green">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Bills</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$1250.00</div>
+                                <div class="description">/ $1000.00</div>
+                            </div>
+                        </li>
+                        <li class="budget red selected">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Groceries</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$75.00</div>
+                                <div class="description">/ $100.00</div>
+                            </div>
+                        </li>
+                        <li class="budget yellow">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Food</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$58.00</div>
+                                <div class="description">/ $300.00</div>
+                            </div>
+                        </li>
+                        <li class="budget green">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Bills</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$1250.00</div>
+                                <div class="description">/ $1000.00</div>
+                            </div>
+                        </li>
+                        <li class="budget red">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Groceries</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$75.00</div>
+                                <div class="description">/ $100.00</div>
+                            </div>
+                        </li>
+                        <li class="budget yellow">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Food</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$58.00</div>
+                                <div class="description">/ $300.00</div>
+                            </div>
+                        </li>
+                        <li class="budget green">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Entertainment</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$150.00</div>
+                                <div class="description">/ $200.00</div>
+                            </div>
+                        </li>
+                        <li class="budget green">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Bills</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$1250.00</div>
+                                <div class="description">/ $1000.00</div>
+                            </div>
+                        </li>
+                        <li class="budget red">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Groceries</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$75.00</div>
+                                <div class="description">/ $100.00</div>
+                            </div>
+                        </li>
+                        <li class="budget yellow">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Food</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$58.00</div>
+                                <div class="description">/ $300.00</div>
+                            </div>
+                        </li>
+                        <li class="budget green">
+                            <div class="health"></div>
+                            <div class="vertical-stack">
+                                <div class="title">Entertainment</div>
+                                <div class="description">&nbsp;</div>
+                            </div>
+                            <div class="amount vertical-stack">
+                                <div class="title">$150.00</div>
+                                <div class="description">/ $200.00</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col4 last"></div>
+        <div class="details col8 last">
+            <div class="detail-bar">
+                <h3>Groceries Budget</h3>
+                <ul class="detail-buttons">
+                    <li><a href="#">Change Settings</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+            </div>
+            <div class="detail-container">
+
+                <h4>Transactions</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                        <tr>
+                            <td class="amount">$13.37</td>
+                            <td>Some store</td>
+                            <td>Payment</td>
+                            <td class="date">2/7/13</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
