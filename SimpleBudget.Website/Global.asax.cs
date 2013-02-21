@@ -24,6 +24,10 @@ namespace SimpleBudget.Website
 
             public override void Configure(Container container)
             {
+                Config.AllowFileExtensions.Add("woff");
+                Config.AllowFileExtensions.Add("ttf");
+
+
                 //register any dependencies your services use, e.g:
                 ContainerBuilder builder = new ContainerBuilder();
 

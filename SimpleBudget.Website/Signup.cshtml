@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "SignupLayout";
+    ViewBag.SubPageTitle = "Welcome";
+    ViewBag.NavigationItems = new List<NavigationItem> { }; //new 
+}
+<div class="container subnav">
+    <div class="row">
+        <div class="col2">
+            <h3>Signup</h3>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col3">
+        </div>
+        <div class="col5">
+            <form>
+                <fieldset>
+                    <legend>Create Category</legend>
+                    <dl>
+                        <dt>
+                            <label for="Name">First Name:</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="FirstName" placeholder="FirstName" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <label for="Name">Last Name:</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="LastName" placeholder="LastName" />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <label for="Name">Email Address:</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Email" placeholder="youremail@emaildomain.com" />
+                        </dd>
+                    </dl>
+                    @*<dl>
+                        <dt>
+                            <label for="Notes">Notes:</label>
+                        </dt>
+                        <dd>
+                            <textarea id="Notes" placeholder="Description of the group."></textarea>
+                        </dd>
+                    </dl>*@
+                    <hr />
+                    <dl>
+                        <dt>
+
+                            <label for="Hidden">I agree to <a href="">these terms</a> that silly lawyers require:</label>
+                            <input type="checkbox" id="Hidden" />
+                        </dt>
+                    </dl>
+                    <hr />
+                    <button id="btnSaveGroup" class="green">Sign me up!</button> 
+                    <button id="btnDeleteGroup" class="gray">I'm not sure yet</button>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

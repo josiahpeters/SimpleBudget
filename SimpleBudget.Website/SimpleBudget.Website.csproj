@@ -139,7 +139,9 @@
     <Content Include="Scripts\jquery.tinyscrollbar.min.js" />
     <Content Include="Transactions.cshtml" />
     <Content Include="Budgets2.cshtml" />
-    <None Include="Default.cshtml" />
+    <Content Include="Signup.cshtml" />
+    <Content Include="Default.cshtml" />
+    <None Include="Dashboard.cshtml" />
     <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\josiah_small.jpg" />
@@ -153,7 +155,9 @@
     <Content Include="Styles\forms.css" />
     <Content Include="Styles\grid.css" />
     <Content Include="Styles\layout.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AppHost.cs" />
@@ -174,6 +178,7 @@
     <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="font\FontAwesome.otf" />
     <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Shared\SignupLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -211,7 +216,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>20294</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1753/</IISUrl>
+          <IISUrl>http://joey-work:1753/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

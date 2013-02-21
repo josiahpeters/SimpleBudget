@@ -1,58 +1,52 @@
 ﻿@{
-    Layout = "Layout";
-    ViewBag.SubPageTitle = "Dashboard";
+    Layout = "SignupLayout";
+    ViewBag.SubPageTitle = "Welcome";
     ViewBag.NavigationItems = new List<NavigationItem> { }; //new 
 }
 
+<div class="container welcome">
+    <div class="row">
+        <div class="col3">
+        </div>
+        <div class="col4">
+            <h3>SimpleBudget</h3>
+            <p>Budgeting should be simple and easy or you won't do it.</p>
+            <a href="/Signup" id="btnSignup" class="green">Sign up!</a>
+        </div>
+        <div class="col1">
+            <i class="welcome-icon icon-lightbulb"></i>
+        </div>
+    </div>
+</div>
+
 <div class="container">
-    <div class="row">        
-        <div class="col12 last">
-            <ul class="budgets">
-                <li class="budget green">
-                    <div class="health"></div>
-                    <div class="vertical-stack">
-                        <div class="title">Bills</div>
-                        <div class="description">$25 remaining for 2 weeks.</div>
-                    </div>
-                    <div class="amount vertical-stack">
-                        <div class="title">$1250.00</div>
-                        <div class="description">/ $1000.00</div>
-                    </div>
-                </li>
-                <li class="budget red">
-                    <div class="health"></div>
-                    <div class="vertical-stack">
-                        <div class="title">Groceries</div>
-                        <div class="description">$345 remaining for 2 weeks.</div>
-                    </div>
-                    <div class="amount vertical-stack">
-                        <div class="title">$75.00</div>
-                        <div class="description">/ $100.00</div>
-                    </div>
-                </li>
-                <li class="budget yellow">
-                    <div class="health"></div>
-                    <div class="vertical-stack">
-                        <div class="title">Food</div>
-                        <div class="description">$15 remaining for 2 weeks.</div>
-                    </div>
-                    <div class="amount vertical-stack">
-                        <div class="title">$58.00</div>
-                        <div class="description">/ $300.00</div>
-                    </div>
-                </li>
-                <li class="budget green">
-                    <div class="health"></div>
-                    <div class="vertical-stack">
-                        <div class="title">Entertainment</div>
-                        <div class="description">$95 remaining for 2 weeks.</div>
-                    </div>
-                    <div class="amount vertical-stack">
-                        <div class="title">$150.00</div>
-                        <div class="description">/ $200.00</div>
-                    </div>
-                </li>
-            </ul>
+    <div class="row">
+        <div class="col4">
+            <h3><i class="icon-exchange"></i> Keep your information private</h3>
+            <p>We don't require your online banking information. Don't worry about us data mining your banking information and selling the results to retailers.</p>
+        </div>
+        <div class="col4">
+            <h3><i class="icon-bar-chart"></i> Multiple Budgets</h3>
+            <p>Everyone has their own needs. You can track all your information in one budget or as many budgets as you need. Get organized in the best way that suites you instead of relying on us to make your decisions for you.</p>
+        </div>
+        <div class="col4 last">
+            <h3><i class="icon-group"></i> Share your budgets</h3>
+            <p>Share your budget with a spouse, partner, or members of an organization. Give them read only access or let them assist you with adding information.</p>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col4">
+            <h3><i class="icon-warning-sign"></i> Notifications</h3>
+            <p>Find yourself forgetting to pay your bills? SimpleBudget can send you reminders for bills and other events you need to be reminded about.</p>
+        </div>
+        <div class="col4">
+            <h3><i class="icon-cloud-download"></i> Cloud shmoud</h3>
+            <p>What good is the cloud if you can't get your data back out of it? If we can't provide you the service you need, feel free to export all of your data to XLS or CSV files so you can easily get up and running with someone else.</p>
+        </div>
+        <div class="col4 last">
+            <h3><i class="icon-group"></i> icon-mobile-phone</h3>
+            <p>Use SimpleBudget from any device. Our responsive and mobile friendly design means you can use the site at work, home, or on the go.</p>
         </div>
     </div>
 </div>

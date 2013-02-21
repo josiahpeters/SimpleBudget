@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="/Styles/font-awesome.css" rel="stylesheet" />
+    <link href="/Styles/base.css" rel="stylesheet" />
+    <link href="/Styles/grid.css" rel="stylesheet" />
+    <link href="/Styles/layout.css" rel="stylesheet" />
+    <link href="/Styles/forms.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header class="container">
+        <div class="row">
+            <h1 class="col3">SimpleBudget</h1>
+            <nav class="col9 last">
+                <ul>
+                    <li><a href="/Default"><i class="icon-home"></i>Welcome</a></li>
+                    <li><a href="/Signup"><i class="icon-user"></i>Sign Up</a></li>
+                    <li class="dropdown-menu profile"><a href="/Dashboard"><i class="icon-signin"></i>Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    @RenderBody()
+    @*<script src="/Scripts/jquery.js"></script>*@
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    @*<script src="/Scripts/jquery.tinyscrollbar.min.js"></script>
+    <script>
+        $(document).ready(function ()
+        {
+            $('#scrollbar1').tinyscrollbar();
+        });
+    </script>*@
+</body>
+</html>
